@@ -36,14 +36,14 @@ This project demonstrates **multithreading**, **thread safety**, and **OOP princ
 ##  Comparison: With vs. Without Synchronization
 
 ###  Without Synchronization (Race Condition)
-![Without Sync](images/without-synchronization.png)
+![Without Sync](src/images/without-synchronization.png)
 
 Notice how multiple users may get the same room due to race condition.
 
 ---
 
 ###  With Synchronization
-![With Sync](images/with-synchronization.png)
+![With Sync](src/images/with-synchronization.png)
 
 Only one user gets each room — thread-safe behavior.
 
