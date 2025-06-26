@@ -14,21 +14,25 @@ public class Hotel {
         }
     }
 
-    public int getTotalRoomsAvailabe() {
-        return totalRoomsAvailabe;
+    public synchronized Room bookRoom(User user) {
+        try {
+            Thread.sleep(300);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        if (roomsAvailable > 0) {
+            Room room = rooms[roomsBooked];
+            room.updateBookedStatus();
+            roomsBooked++;
+            roomsAvailable--;
+            user.updateBookedRoom(room);
+            return room;
+        }
+        return null;
     }
 
     public int getRoomsAvailable() {
         return roomsAvailable;
-    }
-
-    public int getRoomsBooked() {
-        return roomsBooked;
-    }
-
-    public void markRoomAsBooked() {
-        this.roomsBooked++;
-        this.roomsAvailable--;
     }
 
     public Room getRoom() {
