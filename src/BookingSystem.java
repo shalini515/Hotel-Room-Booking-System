@@ -1,5 +1,4 @@
 public class BookingSystem {
-
     public void bookRoom(User user, Hotel hotel) {
         Room room = hotel.bookRoom(user);
         if (room != null) {
